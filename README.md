@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ✦ StyleZ — Haute Couture & Contemporary Luxury E-Commerce
 
 A modern, full-stack luxury fashion e-commerce platform built with **Node.js**, **Express.js**, **SQLite**, and **vanilla HTML/CSS/JavaScript**.
@@ -158,3 +159,7 @@ http://localhost:3000
 | **Admin** | `admin@stylez.com` | `admin123` |
 
 *Tip: Clicking the **"✦ 1-Click Auto-Fill Demo Account"** button in the Sign In modal fills these credentials automatically.*
+=======
+# CodeAlpha_StyleZ_Ecommerce
+CodeAlpha internship projects — full-stack web development
+>>>>>>> 1765f67dd0ca426a84b24f8645aa3dca512643d3
