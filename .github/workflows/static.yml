@@ -3,7 +3,11 @@ name: Deploy StyleZ to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
+    paths:
+      - "public/**"
+      - ".github/workflows/static.yml"
   workflow_dispatch:
 
 permissions:
@@ -12,7 +16,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -21,17 +25,18 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Configure Pages
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
       - name: Upload StyleZ frontend
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: ./public
 
       - name: Deploy to GitHub Pages
         id: deployment
