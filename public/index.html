@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleZ — Haute Couture & Contemporary Luxury E-Commerce</title>
+  <meta name="description" content="Discover StyleZ: Premium fashion, artisanal tailoring, pure silks, and Grade-A cashmere.">
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" role="complementary" aria-label="Announcement">
+    <span>✦ Haute Couture 2026 Collection — Now Live</span>
+    <span class="accent">Complimentary White-Glove Courier On Orders $300+</span>
+    <span>✦ Hand-Crafted in Florence & Milan</span>
+  </aside>
+
+  <!-- Sticky Luxury Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="StyleZ Home">
+        <span>STYLE<span class="brand-mark">Z</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#collection" class="nav-link active">Collections</a></li>
+          <li><a href="#collection" class="nav-link" onclick="StyleZApp.selectCategory('women')">Women</a></li>
+          <li><a href="#collection" class="nav-link" onclick="StyleZApp.selectCategory('men')">Men</a></li>
+          <li><a href="#collection" class="nav-link" onclick="StyleZApp.selectCategory('outerwear')">Outerwear</a></li>
+          <li><a href="#atelier" class="nav-link">Atelier</a></li>
+          <li><a href="#" id="navOrdersLink" class="nav-link">Order Archives</a></li>
+        </ul>
+      </nav>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <!-- Search anchor button -->
+        <a href="#collection" class="nav-btn" title="Search Collection" aria-label="Search Collection" onclick="document.getElementById('catalogSearchInput')?.focus()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </a>
+
+        <!-- User Profile Container -->
+        <div id="userNavContainer">
+          <button class="user-account-btn" id="userAccountBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span>Sign In</span>
+          </button>
+        </div>
+
+        <!-- Shopping Cart Trigger Button -->
+        <button class="nav-btn" id="openCartBtn" title="Shopping Bag" aria-label="Open Shopping Bag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-count-badge" id="cartCountBadge" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cinematic Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background">
+        <img class="hero-bg-image" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85" alt="StyleZ Haute Couture Campaign 2026">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content reveal-on-scroll">
+          <div class="hero-season-pill">
+            <span class="dot"></span>
+            <span>Winter / Spring Haute Couture 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            Elegance Sculpted
+            <span class="highlight">in Silence.</span>
+          </h1>
+
+          <p class="hero-description">
+            Where modern architectural precision meets the tactile luxury of 22-momme pure silks, Grade-A Mongolian cashmere, and Tuscan hand-craftsmanship. Created for the discerning silhouette.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#collection" class="btn btn-gold btn-lg">Explore Collection</a>
+            <a href="#atelier" class="btn btn-outline btn-lg">The Atelier Story</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="hero-metric-item">
+              <h4>12 Drops</h4>
+              <p>Limited Edition</p>
+            </div>
+            <div class="hero-metric-item">
+              <h4>100%</h4>
+              <p>Pure Silk & Cashmere</p>
+            </div>
+            <div class="hero-metric-item">
+              <h4>Artisanal</h4>
+              <p>Handmade in Italy</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marquee Ticker Strip -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-content">
+        <div class="marquee-item"><span>Handcrafted in Florence</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Super 150s Virgin Wool</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Complimentary White-Glove Courier</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>22 Momme Pure Mulberry Silk</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Bespoke Fitting Service</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Grade-A Mongolian Cashmere</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Handcrafted in Florence</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Super 150s Virgin Wool</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Complimentary White-Glove Courier</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>22 Momme Pure Mulberry Silk</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Bespoke Fitting Service</span><span class="separator">✦</span></div>
+        <div class="marquee-item"><span>Grade-A Mongolian Cashmere</span><span class="separator">✦</span></div>
+      </div>
+    </div>
+
+    <!-- Product Catalog Section -->
+    <section class="container" id="collection" style="padding-top: 5rem; padding-bottom: 5rem;">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-eyebrow">Haute Couture & Essentials</span>
+        <h2 class="section-title">The Current Collection</h2>
+        <p class="section-subtitle">
+          Each silhouette is designed with obsessive attention to proportion, hand-finished seams, and luxurious natural textiles.
+        </p>
+      </div>
+
+      <!-- Catalog Toolbar & Filters -->
+      <div class="catalog-toolbar reveal-on-scroll">
+        <!-- Categories Filter Pills -->
+        <div class="filter-categories-row" id="filterCategoriesRow">
+          <button class="category-pill active" data-category="all">All Collections</button>
+        </div>
+
+        <!-- Controls: Search, Price Slider, Sort -->
+        <div class="filter-controls-row">
+          <!-- Search input -->
+          <div class="search-box-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="catalogSearchInput" class="search-input" placeholder="Search by name, fabric, or style (e.g., Silk, Blazer, Cashmere)..." aria-label="Search collection">
+          </div>
+
+          <div class="filter-controls-right">
+            <!-- Price filter slider -->
+            <div class="price-filter-group">
+              <span>Max Price:</span>
+              <strong id="priceFilterValueText" style="color: var(--gold-light); min-width: 50px;">$1200</strong>
+              <input type="range" id="priceRangeSlider" class="price-range-slider" min="150" max="1200" step="25" value="1200" aria-label="Filter by maximum price">
+            </div>
+
+            <!-- Sort dropdown -->
+            <div class="sort-select-wrapper">
+              <select id="sortSelect" class="sort-select" aria-label="Sort products">
+                <option value="featured">Featured Curations</option>
+                <option value="price_asc">Price: Low to High</option>
+                <option value="price_desc">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+                <option value="newest">Newest Additions</option>
+              </select>
+            </div>
+
+            <!-- Reset filters button -->
+            <button id="resetFilterBtn" class="reset-filter-btn" title="Reset all applied filters">Reset</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Product Grid -->
+      <div class="product-grid" id="productGrid">
+        <!-- Injected dynamically via StyleZUI.renderProducts -->
+        <div style="grid-column: 1 / -1; text-align: center; padding: 4rem; color: var(--gold-light);">
+          Loading StyleZ Haute Couture Drops...
+        </div>
+      </div>
+    </section>
+
+    <!-- Atelier Craftsmanship Spotlight -->
+    <section class="container" id="atelier">
+      <div class="atelier-banner reveal-on-scroll">
+        <div class="atelier-grid">
+          <div class="atelier-content">
+            <span class="section-eyebrow">The Atelier Philosophy</span>
+            <h3>Sculpted for Longevity, Never for Fleeting Trends.</h3>
+            <p>
+              At StyleZ, we reject the disposable cycle of fast fashion. Our pieces are hand-crafted in small, numbered editions across historic ateliers in Florence and Milan. From hand-rolled silk hems to double-faced cashmere seams, every detail is engineered to outlive generations.
+            </p>
+            <div class="atelier-features">
+              <div class="atelier-feature-item">
+                <h5>Traceable Fibers</h5>
+                <p>100% organic Mongolian cashmere and GOTS-certified mulberry silk.</p>
+              </div>
+              <div class="atelier-feature-item">
+                <h5>Master Cutters</h5>
+                <p>Over four decades of heritage pattern cutting in every lapel and drape.</p>
+              </div>
+              <div class="atelier-feature-item">
+                <h5>Concierge Delivery</h5>
+                <p>Delivered in signature gold-embossed keepsake storage boxes.</p>
+              </div>
+            </div>
+          </div>
+          <div style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1000&q=80" alt="StyleZ Atelier Tailoring Craftsmanship" style="border-radius: var(--radius-sm); border: 1px solid var(--border-gold); box-shadow: var(--shadow-lg);">
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Luxury Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <span>STYLE<span class="brand-mark">Z</span></span>
+          </a>
+          <p>
+            Haute Couture and contemporary luxury tailoring. Handcrafted silhouettes for those who lead with poise and timeless discernment.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Flagship Salons</h5>
+          <ul>
+            <li><a href="#atelier">Via Montenapoleone, Milan</a></li>
+            <li><a href="#atelier">Rue du Faubourg Saint-Honoré, Paris</a></li>
+            <li><a href="#atelier">Madison Avenue, New York</a></li>
+            <li><a href="#atelier">Ginza Six, Tokyo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Client Concierge</h5>
+          <ul>
+            <li><a href="#" onclick="StyleZCart.open()">View Shopping Bag</a></li>
+            <li><a href="#" onclick="StyleZOrders.open()">Track Past Orders</a></li>
+            <li><a href="#" onclick="StyleZAuth.open('login')">Atelier Member Access</a></li>
+            <li><a href="#collection">Bespoke Fittings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Collection Drops</h5>
+          <ul>
+            <li><a href="#collection" onclick="StyleZApp.selectCategory('women')">Eveningwear Gowns</a></li>
+            <li><a href="#collection" onclick="StyleZApp.selectCategory('outerwear')">Cashmere Overcoats</a></li>
+            <li><a href="#collection" onclick="StyleZApp.selectCategory('men')">Virgin Wool Tailoring</a></li>
+            <li><a href="#collection" onclick="StyleZApp.selectCategory('accessories')">Tuscan Leather Goods</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 StyleZ Atelier Inc. All rights reserved.
+        </div>
+        <div class="footer-demo-badge">
+          <span>✦</span>
+          <span>Interactive E-Commerce Demo — Server-Validated SQLite Architecture</span>
+        </div>
+        <div style="color: var(--ivory-muted);">
+          Crafted with Node.js, Express, SQLite & Vanilla JS
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       Modals and Drawers
+       ====================================================================== -->
+
+  <!-- 1. Sliding Shopping Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      <div class="cart-header">
+        <h3 class="cart-header-title">
+          <span>Shopping Bag</span>
+          <span class="cart-header-count" id="cartHeaderCount">(0 items)</span>
+        </h3>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Close bag">&times;</button>
+      </div>
+
+      <!-- Free Shipping Progress -->
+      <div class="cart-shipping-notice" id="cartShippingNotice">
+        <div class="cart-shipping-text" id="cartShippingText">
+          <span>✦</span> Add $300.00 for complimentary white-glove courier.
+        </div>
+        <div class="cart-shipping-bar">
+          <div class="cart-shipping-bar-fill" id="cartShippingBarFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items Container -->
+      <div class="cart-items-container" id="cartItemsContainer">
+        <!-- Injected dynamically via StyleZCart.render -->
+      </div>
+
+      <!-- Cart Footer & Checkout Action -->
+      <div class="cart-footer">
+        <div class="cart-summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotalAmount">$0.00</span>
+        </div>
+        <div class="cart-summary-row">
+          <span>Shipping & Duties</span>
+          <span style="color: var(--gold-light);">Calculated at Checkout</span>
+        </div>
+        <div class="cart-footer-actions">
+          <button class="btn btn-gold btn-full btn-lg" id="cartCheckoutBtn">
+            Proceed to Checkout
+          </button>
+          <button class="btn btn-dark btn-full btn-sm" id="cartContinueShoppingBtn">
+            Continue Shopping
+          </button>
+        </div>
+        <p class="cart-disclaimer">
+          Taxes and shipping confirmed by server prior to payment authorization.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 2. Product Quick View Modal -->
+  <div class="modal-overlay" id="quickViewOverlay">
+    <div class="modal-container" role="dialog" aria-modal="true" aria-label="Product Quick View">
+      <button class="modal-close-btn" id="closeQuickViewBtn" aria-label="Close preview">&times;</button>
+      <div id="quickViewBody">
+        <!-- Injected dynamically via StyleZUI.openQuickView -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Authentication Modal (Login / Register) -->
+  <div class="modal-overlay" id="authModalOverlay">
+    <div class="modal-container auth-modal-container" role="dialog" aria-modal="true" aria-label="Account Access">
+      <button class="modal-close-btn" id="closeAuthBtn" aria-label="Close account modal">&times;</button>
+
+      <div class="auth-header">
+        <div class="brand-logo" style="justify-content: center; margin-bottom: 0.75rem;">
+          <span>STYLE<span class="brand-mark">Z</span></span>
+        </div>
+        <h3>Atelier Privé</h3>
+        <p>Sign in to view your bespoke orders, curated wishlist, and private drops.</p>
+      </div>
+
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="authTabLogin">Sign In</button>
+        <button class="auth-tab-btn" id="authTabRegister">Create Account</button>
+      </div>
+
+      <div class="auth-error-banner" id="authErrorBanner"></div>
+
+      <!-- Login Form -->
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="client@stylez.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-gold btn-full btn-lg" style="margin-top: 1rem;">
+          Sign In
+        </button>
+      </form>
+
+      <!-- Register Form -->
+      <form id="registerForm" style="display: none;">
+        <div class="form-group">
+          <label class="form-label" for="regName">Full Name</label>
+          <input type="text" id="regName" class="form-control" placeholder="Lady Genevieve Dupont" required autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regEmail">Email Address</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="genevieve@dupont.luxury" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Password (6+ characters)</label>
+          <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required autocomplete="new-password">
+        </div>
+        <button type="submit" class="btn btn-gold btn-full btn-lg" style="margin-top: 1rem;">
+          Create Atelier Account
+        </button>
+      </form>
+
+      <!-- 1-Click Demo Pre-fill -->
+      <div class="demo-account-box">
+        <p>Want to test instantly with a pre-seeded account?</p>
+        <button type="button" class="demo-autofill-btn" id="demoFillBtn">
+          ✦ 1-Click Auto-Fill Demo Account (Alexander Vance)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModalOverlay">
+    <div class="modal-container checkout-modal-container" role="dialog" aria-modal="true" aria-label="Checkout">
+      <button class="modal-close-btn" id="closeCheckoutBtn" aria-label="Close checkout">&times;</button>
+
+      <div class="demo-badge-banner">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>
+          <strong>DEMO CHECKOUT:</strong> Stock validation and pricing calculations are strictly verified on the server. No real card will be billed.
+        </span>
+      </div>
+
+      <div class="checkout-error-banner" id="checkoutErrorBanner" style="display: none; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); color: #fca5a5; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.5rem; font-size: 0.85rem;"></div>
+
+      <div class="checkout-grid">
+        <!-- Shipping & Payment Form -->
+        <div>
+          <h4 class="checkout-heading">White-Glove Shipping Address</h4>
+          <form id="checkoutForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkoutName">Recipient Full Name *</label>
+                <input type="text" id="checkoutName" class="form-control" placeholder="Alexander Vance" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkoutEmail">Email Address *</label>
+                <input type="email" id="checkoutEmail" class="form-control" placeholder="alexander@vance.luxury" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkoutPhone">Phone Number (For Courier Coordination)</label>
+              <input type="tel" id="checkoutPhone" class="form-control" placeholder="+1 (555) 749-2041">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkoutAddress">Street Address & Suite *</label>
+              <input type="text" id="checkoutAddress" class="form-control" placeholder="742 Evergreen Terrace, Apt 14B" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="checkoutCity">City *</label>
+                <input type="text" id="checkoutCity" class="form-control" placeholder="New York" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="checkoutPostal">Postal Code *</label>
+                <input type="text" id="checkoutPostal" class="form-control" placeholder="10021" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="checkoutCountry">Country</label>
+              <input type="text" id="checkoutCountry" class="form-control" value="United States" required>
+            </div>
+
+            <h4 class="checkout-heading" style="margin-top: 2rem;">Demo Payment Method</h4>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem;">
+              <label style="display: flex; align-items: center; gap: 0.75rem; background: var(--bg-card); padding: 0.85rem 1rem; border: 1px solid var(--border-gold); border-radius: var(--radius-sm); cursor: pointer;">
+                <input type="radio" name="paymentMethod" value="Demo Card (Pre-approved)" checked style="accent-color: var(--gold-primary);">
+                <span style="font-size: 0.85rem; color: var(--ivory-white); font-weight: 500;">Demo Platinum Card (•••• 8842) — Instant Approval</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.75rem; background: var(--bg-card); padding: 0.85rem 1rem; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer;">
+                <input type="radio" name="paymentMethod" value="Demo White-Glove Cash on Delivery" style="accent-color: var(--gold-primary);">
+                <span style="font-size: 0.85rem; color: var(--ivory-white); font-weight: 500;">White-Glove Cash on Delivery</span>
+              </label>
+            </div>
+
+            <button type="submit" id="placeOrderBtn" class="btn btn-gold btn-full btn-lg">
+              Authorize Demo Order
+            </button>
+          </form>
+        </div>
+
+        <!-- Sidebar Summary -->
+        <div class="checkout-sidebar">
+          <h4 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--ivory-white); margin-bottom: 1.25rem;">Order Review</h4>
+          <div class="checkout-items-preview" id="checkoutItemsPreview">
+            <!-- Injected dynamically -->
+          </div>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ivory-muted); margin-bottom: 0.5rem;">
+            <span>Subtotal</span>
+            <span id="checkoutSubtotalText" style="color: var(--ivory-primary);">$0.00</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ivory-muted); margin-bottom: 0.5rem;">
+            <span>White-Glove Delivery</span>
+            <span id="checkoutShippingText" style="color: var(--gold-light);">Complimentary</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--ivory-muted); margin-bottom: 0.75rem;">
+            <span>Estimated Duties & Tax</span>
+            <span id="checkoutTaxText" style="color: var(--ivory-primary);">$0.00</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 1.25rem; font-weight: 700; border-top: 1px solid var(--border-subtle); padding-top: 0.85rem; margin-top: 0.5rem;">
+            <span>Total</span>
+            <span id="checkoutTotalText" style="font-family: var(--font-display); color: var(--gold-light);">$0.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Order Confirmation / Success Modal -->
+  <div class="modal-overlay" id="orderSuccessModalOverlay">
+    <div class="modal-container order-success-container" role="dialog" aria-modal="true" aria-label="Order Confirmation">
+      <button class="modal-close-btn" id="closeSuccessBtn" aria-label="Close confirmation">&times;</button>
+
+      <div class="order-success-icon">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h3 style="font-family: var(--font-display); font-size: 1.85rem; color: var(--ivory-white); margin-bottom: 0.5rem;">
+        Order Confirmed
+      </h3>
+      <p style="font-size: 0.9rem; color: var(--ivory-muted); max-width: 440px; margin: 0 auto;">
+        Thank you for choosing StyleZ. Your couture garments have been reserved and routed to our Milan atelier for packaging.
+      </p>
+
+      <div class="order-number-badge" id="successOrderNumber">
+        STZ-2026-000000
+      </div>
+
+      <div class="order-receipt-card" id="successReceiptBody">
+        <!-- Injected dynamically -->
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.75rem;">
+        <button class="btn btn-gold btn-sm" id="successViewOrdersBtn">View Order Archives</button>
+        <button class="btn btn-outline btn-sm" id="successContinueBtn">Continue Exploring</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Order History Modal -->
+  <div class="modal-overlay" id="ordersModalOverlay">
+    <div class="modal-container orders-modal-container" role="dialog" aria-modal="true" aria-label="Order History">
+      <button class="modal-close-btn" id="closeOrdersBtn" aria-label="Close order history">&times;</button>
+
+      <div style="border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem;">
+        <span class="section-eyebrow">Client Dashboard</span>
+        <h3 style="font-family: var(--font-display); font-size: 1.75rem; color: var(--ivory-white);">
+          Order Archives
+        </h3>
+        <p style="font-size: 0.85rem; color: var(--ivory-muted);">
+          Review your previous acquisitions, tracking numbers, and bespoke atelier receipts.
+        </p>
+      </div>
+
+      <div class="orders-list" id="ordersListContainer">
+        <!-- Injected dynamically via StyleZOrders.fetchAndRender -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Client JavaScript Layer -->
+  <script src="js/api.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
