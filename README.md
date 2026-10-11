@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# ✦ StyleZ — Haute Couture & Contemporary Luxury E-Commerce
+﻿# âœ¦ StyleZ â€” Haute Couture & Contemporary Luxury E-Commerce
 
 A modern, full-stack luxury fashion e-commerce platform built with **Node.js**, **Express.js**, **SQLite**, and **vanilla HTML/CSS/JavaScript**.
 
@@ -7,7 +6,7 @@ Featuring a visual palette of **deep obsidian black (`#0A0A0A`)**, **champagne g
 
 ---
 
-## 💎 Features & Capabilities
+## ðŸ’Ž Features & Capabilities
 
 1. **Editorial Fashion Experience**:
    - Cinematic hero section with high-resolution imagery and campaign metrics.
@@ -31,7 +30,7 @@ Featuring a visual palette of **deep obsidian black (`#0A0A0A`)**, **champagne g
 
 4. **Sliding Shopping Cart Drawer**:
    - Slide-in drawer with glassmorphism backdrop.
-   - Dynamic item quantity adjustment (`+` / `−`) bound to inventory limits.
+   - Dynamic item quantity adjustment (`+` / `âˆ’`) bound to inventory limits.
    - Real-time subtotal calculation.
    - Free shipping progress bar indicating distance to complimentary courier ($300 threshold).
    - Animated cart badge bump in navbar.
@@ -61,7 +60,7 @@ Featuring a visual palette of **deep obsidian black (`#0A0A0A`)**, **champagne g
 
 ---
 
-## 🛠 Technology Stack
+## ðŸ›  Technology Stack
 
 - **Backend:** Node.js, Express.js (v5)
 - **Database:** SQLite with `better-sqlite3` (WAL mode enabled, foreign keys enforced)
@@ -71,51 +70,51 @@ Featuring a visual palette of **deep obsidian black (`#0A0A0A`)**, **champagne g
 
 ---
 
-## 📁 Project Structure
+## ðŸ“ Project Structure
 
 ```
 styleZ/
-├── package.json               # Dependencies and start scripts
-├── .env.example               # Environment variables template
-├── .env                       # Active environment configuration
-├── server.js                  # Express application and route mounting
-├── README.md                  # Documentation and setup guide
-│
-├── database/
-│   ├── db.js                  # SQLite database connection & schema init
-│   ├── schema.sql             # SQL table definitions & indexes
-│   ├── seed.js                # Sample catalog and demo user seeder
-│   └── stylez.db              # SQLite database file
-│
-├── middleware/
-│   └── auth.js                # Session attachment and protected route guard
-│
-├── routes/
-│   ├── auth.js                # Register, login, logout, session /me
-│   ├── products.js            # Catalog filtering, search, and details
-│   ├── checkout.js            # Stock-validated atomic order processor
-│   └── orders.js              # User order history archives
-│
-└── public/
-    ├── index.html             # Single-page storefront markup & modals
-    ├── css/
-    │   ├── styles.css         # Design tokens, layout, hero, typography
-    │   ├── components.css     # Cards, drawer, modals, forms, toasts
-    │   └── animations.css     # Keyframes and scroll reveal classes
-    └── js/
-        ├── api.js             # Fetch wrapper for all backend routes
-        ├── state.js           # Client state store (cart, user, filters)
-        ├── cart.js            # Shopping bag drawer and quantity logic
-        ├── auth.js            # Auth modal, demo autofill, session check
-        ├── checkout.js        # Checkout modal, validation, confirmation
-        ├── orders.js          # Order history archives controller
-        ├── ui.js              # Product cards, quick view zoom, toasts
-        └── app.js             # Bootstrap and catalog event wiring
+â”œâ”€â”€ package.json               # Dependencies and start scripts
+â”œâ”€â”€ .env.example               # Environment variables template
+â”œâ”€â”€ .env                       # Active environment configuration
+â”œâ”€â”€ server.js                  # Express application and route mounting
+â”œâ”€â”€ README.md                  # Documentation and setup guide
+â”‚
+â”œâ”€â”€ database/
+â”‚   â”œâ”€â”€ db.js                  # SQLite database connection & schema init
+â”‚   â”œâ”€â”€ schema.sql             # SQL table definitions & indexes
+â”‚   â”œâ”€â”€ seed.js                # Sample catalog and demo user seeder
+â”‚   â””â”€â”€ stylez.db              # SQLite database file
+â”‚
+â”œâ”€â”€ middleware/
+â”‚   â””â”€â”€ auth.js                # Session attachment and protected route guard
+â”‚
+â”œâ”€â”€ routes/
+â”‚   â”œâ”€â”€ auth.js                # Register, login, logout, session /me
+â”‚   â”œâ”€â”€ products.js            # Catalog filtering, search, and details
+â”‚   â”œâ”€â”€ checkout.js            # Stock-validated atomic order processor
+â”‚   â””â”€â”€ orders.js              # User order history archives
+â”‚
+â””â”€â”€ public/
+    â”œâ”€â”€ index.html             # Single-page storefront markup & modals
+    â”œâ”€â”€ css/
+    â”‚   â”œâ”€â”€ styles.css         # Design tokens, layout, hero, typography
+    â”‚   â”œâ”€â”€ components.css     # Cards, drawer, modals, forms, toasts
+    â”‚   â””â”€â”€ animations.css     # Keyframes and scroll reveal classes
+    â””â”€â”€ js/
+        â”œâ”€â”€ api.js             # Fetch wrapper for all backend routes
+        â”œâ”€â”€ state.js           # Client state store (cart, user, filters)
+        â”œâ”€â”€ cart.js            # Shopping bag drawer and quantity logic
+        â”œâ”€â”€ auth.js            # Auth modal, demo autofill, session check
+        â”œâ”€â”€ checkout.js        # Checkout modal, validation, confirmation
+        â”œâ”€â”€ orders.js          # Order history archives controller
+        â”œâ”€â”€ ui.js              # Product cards, quick view zoom, toasts
+        â””â”€â”€ app.js             # Bootstrap and catalog event wiring
 ```
 
 ---
 
-## 🚀 Quick Start Guide
+## ðŸš€ Quick Start Guide
 
 ### 1. Prerequisites
 - **Node.js** (v18 or higher recommended; v24 installed)
@@ -151,15 +150,14 @@ http://localhost:3000
 
 ---
 
-## 🔑 Demo Account Credentials
+## ðŸ”‘ Demo Account Credentials
 
 | Role | Email | Password |
 |---|---|---|
 | **Client (Sample Orders)** | `client@stylez.com` | `password123` |
 | **Admin** | `admin@stylez.com` | `admin123` |
 
-*Tip: Clicking the **"✦ 1-Click Auto-Fill Demo Account"** button in the Sign In modal fills these credentials automatically.*
-=======
+*Tip: Clicking the **"âœ¦ 1-Click Auto-Fill Demo Account"** button in the Sign In modal fills these credentials automatically.*
 # CodeAlpha_StyleZ_Ecommerce
-CodeAlpha internship projects — full-stack web development
->>>>>>> 1765f67dd0ca426a84b24f8645aa3dca512643d3
+CodeAlpha internship projects â€” full-stack web development
+
