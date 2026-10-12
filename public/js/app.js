@@ -107,7 +107,12 @@ const App = {
   async loadCategories() {
     try {
       const data = await window.StyleZAPI.products.getCategories();
-      const categories = data.categories || [];
+      let categories = data && Array.isArray(data.categories) ? data.categories : [];
+
+      if (categories.length === 0 && window.StyleZStaticData && Array.isArray(window.StyleZStaticData.categories)) {
+        categories = window.StyleZStaticData.categories;
+      }
+
       window.StyleZState.categories = categories;
 
       if (!this.elements.categoriesRow) return;
@@ -129,6 +134,23 @@ const App = {
       this.elements.categoriesRow.innerHTML = html;
     } catch (err) {
       console.error('Failed to load categories:', err);
+      if (window.StyleZStaticData && Array.isArray(window.StyleZStaticData.categories) && this.elements.categoriesRow) {
+        const categories = window.StyleZStaticData.categories;
+        window.StyleZState.categories = categories;
+        let html = `
+          <button class="category-pill active" data-category="all" onclick="StyleZApp.selectCategory('all', this)">
+            All Collections
+          </button>
+        `;
+        categories.forEach(cat => {
+          html += `
+            <button class="category-pill" data-category="${cat.slug}" onclick="StyleZApp.selectCategory('${cat.slug}', this)">
+              ${cat.name} (${cat.product_count})
+            </button>
+          `;
+        });
+        this.elements.categoriesRow.innerHTML = html;
+      }
     }
   },
 
@@ -154,12 +176,25 @@ const App = {
       };
 
       const data = await window.StyleZAPI.products.getAll(params);
-      window.StyleZState.products = data.products || [];
+      let products = data && Array.isArray(data.products) ? data.products : [];
 
+      if (products.length === 0 && (!params.q && (!params.category || params.category === 'all') && (!params.maxPrice || params.maxPrice >= 1200))) {
+        if (window.StyleZStaticData && Array.isArray(window.StyleZStaticData.products)) {
+          products = window.StyleZStaticData.products;
+        }
+      }
+
+      window.StyleZState.products = products;
       window.StyleZUI.renderProducts(window.StyleZState.products);
     } catch (err) {
       console.error('Failed to load products:', err);
-      window.StyleZUI.showToast('Network Notice', 'Could not refresh product catalog.', 'warning');
+      if (window.StyleZStaticData && Array.isArray(window.StyleZStaticData.products)) {
+        window.StyleZState.products = window.StyleZStaticData.products;
+        window.StyleZUI.renderProducts(window.StyleZState.products);
+      } else {
+        window.StyleZUI.renderProducts([]);
+      }
+      window.StyleZUI.showToast('Network Notice', 'Displaying offline catalog.', 'warning');
     }
   },
 

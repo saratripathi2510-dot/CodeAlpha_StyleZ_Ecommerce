@@ -150,8 +150,9 @@ const Orders = {
     } catch (err) {
       console.error('Failed to load orders:', err);
       this.elements.listContainer.innerHTML = `
-        <div style="text-align: center; padding: 2rem; color: #ef4444;">
-          <p>Unable to retrieve order history. Please try again later.</p>
+        <div style="text-align: center; padding: 2.5rem 1rem;">
+          <p style="color: var(--gold-light); font-family: var(--font-display); font-size: 1rem; margin-bottom: 0.5rem;">Order Archives Notice</p>
+          <p style="color: var(--ivory-muted); font-size: 0.85rem; max-width: 380px; margin: 0 auto;">${err.message || 'Unable to retrieve order history. Please ensure backend server is active.'}</p>
         </div>
       `;
     }
